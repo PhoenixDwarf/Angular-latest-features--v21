@@ -12,6 +12,8 @@ import { Component, signal } from '@angular/core';
 })
 export default class ControlFlow {
   public showContent = signal(false);
+  public grade = signal<string>('A');
+
   public toggleContent() {
     this.showContent.update((value) => !value);
   }

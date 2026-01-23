@@ -1,19 +1,48 @@
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
   <div class="bg-white rounded shadow p-10">
-    <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+    <h1 class="text-2xl font-bold">If</h1>
+    <h2>if: {{ showContent() }}</h2>
     <button
       (click)="toggleContent()"
-      class="p-2 bg-blue-500 rounded text-white cursor-pointer"
+      class="p-2 bg-blue-500 rounded text-white cursor-pointer my-4"
     >
       CLick me!
     </button>
 
-    <div class="pt-4">
+    <div>
       @if (showContent()) {
         <p>if block</p>
       } @else {
         <p>else block</p>
       }
     </div>
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <h1 class="text-2xl font-bold">Switch</h1>
+    <h2>Grade: {{ grade() }}</h2>
+    <select
+      name="grades"
+      id="gradeSelector"
+      class="w-full bg-gray-50 border-gray-200 border-2 rounded my-4"
+      #select
+      (change)="grade.set(select.value)"
+    >
+      @for (grade of ["A", "B", "F"]; track $index) {
+        <option [value]="grade">{{ grade }}</option>
+      }
+    </select>
+
+    @switch (grade()) {
+      @case ("A") {
+        <p>Above 90</p>
+      }
+      @case ("B") {
+        <p>Above 80</p>
+      }
+      @default {
+        <p>Failed</p>
+      }
+    }
   </div>
 </section>
