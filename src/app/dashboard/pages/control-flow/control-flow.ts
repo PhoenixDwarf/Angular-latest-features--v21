@@ -10,4 +10,4 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class ControlFlow { }
+export default class ControlFlow {}

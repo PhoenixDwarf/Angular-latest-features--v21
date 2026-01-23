@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-users',
+  selector: 'app-user-list',
   imports: [],
-  templateUrl: './users.html',
+  templateUrl: './user-list.html',
   styles: `
     :host {
       display: block;
     }
   `,
 })
-export class Users { }
+export default class UserList {}

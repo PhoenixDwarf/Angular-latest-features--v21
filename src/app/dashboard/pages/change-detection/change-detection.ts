@@ -10,4 +10,4 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class ChangeDetection { }
+export default class ChangeDetection {}
