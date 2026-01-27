@@ -30,14 +30,14 @@ export const routes: Routes = [
           import('./dashboard/pages/defer-views/defer-views'),
       },
       {
-        path: 'user/:id',
-        title: 'User',
-        loadComponent: () => import('./dashboard/pages/user/user'),
+        path: 'country/:id',
+        title: 'Country',
+        loadComponent: () => import('./dashboard/pages/country/user'),
       },
       {
-        path: 'user-list',
-        title: 'User List',
-        loadComponent: () => import('./dashboard/pages/user-list/user-list'),
+        path: 'country-list',
+        title: 'Country List',
+        loadComponent: () => import('./dashboard/pages/user-list/country-list'),
       },
       {
         path: 'view-transition1',
