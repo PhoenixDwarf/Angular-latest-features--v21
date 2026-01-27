@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Countries } from '@services/countries';
+import { CountriesService } from '@services/countries';
 import { Title } from '@shared/title/title';
 import { RouterLink } from '@angular/router';
 
@@ -14,5 +14,5 @@ import { RouterLink } from '@angular/router';
   `,
 })
 export default class CountryList {
-  public countryService = inject(Countries);
+  public countryService = inject(CountriesService);
 }
