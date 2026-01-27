@@ -32,12 +32,13 @@ export const routes: Routes = [
       {
         path: 'country/:id',
         title: 'Country',
-        loadComponent: () => import('./dashboard/pages/country/user'),
+        loadComponent: () => import('./dashboard/pages/country/country'),
       },
       {
         path: 'country-list',
         title: 'Country List',
-        loadComponent: () => import('./dashboard/pages/user-list/country-list'),
+        loadComponent: () =>
+          import('./dashboard/pages/country-list/country-list'),
       },
       {
         path: 'view-transition1',
