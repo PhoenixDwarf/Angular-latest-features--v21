@@ -1,1 +1,22 @@
-<p>users works!</p>,
+<app-title title="Country list" />
+
+<ul>
+  @for (country of countryService.countries(); track country.cca2) {
+    <li class="flex items-center my-2 cursor-pointer">
+      <img
+        [srcset]="country.flags.svg"
+        [alt]="country.flags.alt"
+        class="rounded w-14"
+      />
+
+      <a
+        [routerLink]="['/dashboard/country/', country.cca2]"
+        class="mx-5 hover:underline"
+      >
+        {{ country.name.common }}
+      </a>
+    </li>
+  } @empty {
+    <h3>Please, wait</h3>
+  }
+</ul>

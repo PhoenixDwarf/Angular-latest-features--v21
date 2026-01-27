@@ -1,8 +1,10 @@
-import { Injectable, signal } from '@angular/core';
-import { CountryResponse } from '@interfaces/req-response';
+import { HttpClient } from '@angular/common/http';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { Country } from '@interfaces/req-response';
+import { delay } from 'rxjs';
 
 interface State {
-  countries: CountryResponse[];
+  countries: Country[];
   loading: boolean;
 }
 
@@ -10,11 +12,23 @@ interface State {
   providedIn: 'root',
 })
 export class Countries {
+  private http = inject(HttpClient);
+  public countries = computed(() => this.#state().countries);
+
   #state = signal<State>({
     loading: true,
     countries: [],
   });
+
   constructor() {
-    console.log('Loading data');
+    this.http
+      .get<Country[]>('https://restcountries.com/v3.1/region/europe')
+      .pipe(delay(1500))
+      .subscribe((res) => {
+        this.#state.set({
+          loading: false,
+          countries: res,
+        });
+      });
   }
 }
