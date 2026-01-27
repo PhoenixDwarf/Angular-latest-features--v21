@@ -40,10 +40,16 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/user-list/user-list'),
       },
       {
-        path: 'view-transition',
-        title: 'View Transition',
+        path: 'view-transition1',
+        title: 'View Transition 1',
         loadComponent: () =>
-          import('./dashboard/pages/view-transition/view-transition'),
+          import('./dashboard/pages/view-transition/view-transition1'),
+      },
+      {
+        path: 'view-transition2',
+        title: 'View Transition 2',
+        loadComponent: () =>
+          import('./dashboard/pages/view-transition/view-transition2'),
       },
       {
         path: '',
