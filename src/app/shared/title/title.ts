@@ -4,7 +4,9 @@ import { booleanAttribute, Component, input } from '@angular/core';
   selector: 'app-title',
   imports: [],
   styles: ``,
-  template: `<h1 class="text-3xl mb-5">{{ title() }} - {{ withShadow() }}</h1>`,
+  template: `<h1 class="text-3xl mb-5" [class.shadow]="withShadow()">
+    {{ title() }}
+  </h1>`,
 })
 export class Title {
   public title = input.required<string>();
