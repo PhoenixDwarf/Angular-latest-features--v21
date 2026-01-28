@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/*"
   status = 200
-  to = "angular-latest-features/browser/index.html"
+  to = "11-angular-latest-features/browser/index.html"
