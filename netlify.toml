@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  status = 200
+  to = "angular-latest-features/browser/index.html"
